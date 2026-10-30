@@ -55,8 +55,13 @@ if (cmd === "sample") {
   if (cmd === "compute") {
     writeFileSync(file(out), text);
     console.log(`wrote data/${out}`);
+    if (process.argv.includes("--publish")) {
+      writeFileSync(resolve(dataDir, "../frontend/result.json"), text);
+      console.log("wrote frontend/result.json");
+    }
   } else if (onchain) {
-    const proposed = onchain.proposal.root as string;
+    // viem returns a multi-output read as an array: [proposer, root, pot, proposedAt, openDisputes]
+    const proposed = (Array.isArray(onchain.proposal) ? onchain.proposal[1] : onchain.proposal.root) as string;
     const same = proposed.toLowerCase() === result.root.toLowerCase();
     console.log(same ? `PASS: recomputed root equals the root proposed on-chain` : `FAIL: recomputed root differs from the proposed root (${proposed}). Raise a dispute.`);
     process.exit(same ? 0 : 1);
@@ -66,7 +71,28 @@ if (cmd === "sample") {
     console.log(same ? "PASS: re-running the published graph and judgments gives exactly the committed result" : "FAIL: the recomputed result differs from data/result.json");
     process.exit(same ? 0 : 1);
   }
+} else if (cmd === "graph-hash") {
+  const g = load<Graph>(arg("graph") ?? "graph.json");
+  validateGraph(g);
+  console.log(graphHash(g));
+} else if (cmd === "ballot") {
+  // The questions a juror answers: for each package with dependencies, every pair among {itself, its dependencies}.
+  // Fill in "outcome" (0 = first mattered more, 1 = second mattered more, 2 = about equal) and submit with script/submit-judgments.sh.
+  const g = load<Graph>(arg("graph") ?? "graph.json");
+  validateGraph(g);
+  const nm = new Map(g.packages.map((p) => [p.id, p.name]));
+  const out: unknown[] = [];
+  for (const p of [...g.packages].sort((x, y) => x.id - y.id)) {
+    if (!p.deps.length) continue;
+    const items = [p.id, ...[...p.deps].sort((x, y) => x - y)];
+    for (let i = 0; i < items.length; i++)
+      for (let j = i + 1; j < items.length; j++) {
+        const label = (id: number) => (id === p.id ? `${nm.get(id)} itself` : nm.get(id));
+        out.push({ parent: p.id, a: items[i], b: items[j], question: `For "${nm.get(p.id)}": which mattered more, ${label(items[i])} or ${label(items[j])}?`, outcome: null });
+      }
+  }
+  console.log(JSON.stringify(out, null, 2));
 } else {
-  console.log("usage: node src/cli.ts <sample | compute | reproduce> [--rpc <url> --contract <addr> [--from-block <n>]] [--out file]");
+  console.log("usage: node src/cli.ts <sample | compute | reproduce | graph-hash | ballot> [--rpc <url> --contract <addr> [--from-block <n>]] [--out file]");
   process.exit(1);
 }
