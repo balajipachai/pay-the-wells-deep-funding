@@ -1,0 +1,1182 @@
+{
+  "version": 1,
+  "contract": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "pot": "10000000000000000000",
+  "scale": "1000000000000000000",
+  "graphHash": "0x02afe9f7cb3ca4deef1300f5d01c892ab16767c0aef8612ed4687d4fabf0bd81",
+  "judgmentCount": 125,
+  "judgmentsCounted": 125,
+  "judgmentsDigest": "0x09dcd2aec0449c91abbee45a953a962423de6853a77f6e498fc38007108d6d64",
+  "jurors": [
+    "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "0x70997970C51812dC3a010c7d01B50e0D17dc79c8",
+    "0x3c44cdddB6a900Fa2b585dd299E03d12FA4293bC",
+    "0x90F79bf6EB2c4F870365E785982E1F101e93B906",
+    "0x15d34aAF54267DB7D7C367839aaf71a00A2c6a65"
+  ],
+  "cycles": [
+    [
+      8,
+      9
+    ]
+  ],
+  "propagationRounds": 30,
+  "root": "0x904f4356b97ca88864782b43eedb8736c404e6bf6b0350df5e7d3c680c1944a0",
+  "packages": [
+    {
+      "id": 0,
+      "name": "devcon-event-app",
+      "payout": "0x4699582f9a11Ae7e70B4DdFA122D0712De0aAD63",
+      "deps": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "depth": 0,
+      "isRoot": true,
+      "keptShare": "335049700550890959",
+      "amount": "3350497005508909590",
+      "inflows": []
+    },
+    {
+      "id": 1,
+      "name": "qr-ticketing (solo developer, Pune)",
+      "payout": "0x7bAd7DB06Eed9AbE477a492c28A44F02A58970e6",
+      "deps": [
+        5,
+        6
+      ],
+      "depth": 1,
+      "isRoot": false,
+      "keptShare": "98738687638635725",
+      "amount": "987386876386357250",
+      "inflows": [
+        {
+          "from": 0,
+          "share": "265368552994199372"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "i18n-hindi",
+      "payout": "0x18ea34C60feAEF7d3ABbB3498349DDaCfA7b9F6a",
+      "deps": [
+        7
+      ],
+      "depth": 1,
+      "isRoot": false,
+      "keptShare": "93755374008139100",
+      "amount": "937553740081391000",
+      "inflows": [
+        {
+          "from": 0,
+          "share": "117194217510173875"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "wallet-connect-wrapper",
+      "payout": "0xd8652246EF9BE3D6f6D028a8b6EF7558D18BCa3f",
+      "deps": [
+        7,
+        8
+      ],
+      "depth": 1,
+      "isRoot": false,
+      "keptShare": "54249238609928171",
+      "amount": "542492386099281710",
+      "inflows": [
+        {
+          "from": 0,
+          "share": "127805712827186339"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "ui-kit",
+      "payout": "0xfD94B540cB9F54Fa73D16DB9feCAE4a46aB65F62",
+      "deps": [
+        7,
+        11
+      ],
+      "depth": 1,
+      "isRoot": false,
+      "keptShare": "62183841202893799",
+      "amount": "621838412028937990",
+      "inflows": [
+        {
+          "from": 0,
+          "share": "154581816117549455"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "qr-encode",
+      "payout": "0x7B453526f5852dac145C007B73CE3D37f14B4677",
+      "deps": [
+        12
+      ],
+      "depth": 2,
+      "isRoot": false,
+      "keptShare": "22160924954483568",
+      "amount": "221609249544835680",
+      "inflows": [
+        {
+          "from": 1,
+          "share": "59095799878622847"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "image-decode",
+      "payout": "0x4a87D5448C1496baBe1A47Dd0D68F56C0C6C9AbE",
+      "deps": [
+        12
+      ],
+      "depth": 2,
+      "isRoot": false,
+      "keptShare": "75273845833858560",
+      "amount": "752738458338585600",
+      "inflows": [
+        {
+          "from": 1,
+          "share": "107534065476940800"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "i18n-core",
+      "payout": "0x50FA577985D622eA0EF24d67965FFb0cf4747158",
+      "deps": [
+        13
+      ],
+      "depth": 2,
+      "isRoot": false,
+      "keptShare": "44744896209707374",
+      "amount": "447448962097073740",
+      "inflows": [
+        {
+          "from": 2,
+          "share": "23438843502034775"
+        },
+        {
+          "from": 3,
+          "share": "16012135093373218"
+        },
+        {
+          "from": 4,
+          "share": "67936772307889703"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "eth-rpc",
+      "payout": "0x13c69095364E3a2B8b178A0aDdeBB3e7A924c175",
+      "deps": [
+        9,
+        10
+      ],
+      "depth": 2,
+      "isRoot": false,
+      "keptShare": "29859606080927688",
+      "amount": "298596060809276880",
+      "inflows": [
+        {
+          "from": 3,
+          "share": "57544339123884950"
+        },
+        {
+          "from": 9,
+          "share": "3566191470710746"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "abi-codec",
+      "payout": "0xcaaE1528C35c8fd338b71deEc69B70F54CA51312",
+      "deps": [
+        8,
+        14
+      ],
+      "depth": 3,
+      "isRoot": false,
+      "keptShare": "5550364693153761",
+      "amount": "55503646931537610",
+      "inflows": [
+        {
+          "from": 8,
+          "share": "22627983901443132"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "http-client",
+      "payout": "0xD4503a7A67748AB35252823ED0Ce825f57bfD432",
+      "deps": [
+        15
+      ],
+      "depth": 3,
+      "isRoot": false,
+      "keptShare": "5389337882640553",
+      "amount": "53893378826405530",
+      "inflows": [
+        {
+          "from": 8,
+          "share": "8622940612224876"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "css-utils",
+      "payout": "0xB0202FCB732b5F571eDfd26985fE0E9F84b5BC2e",
+      "deps": [],
+      "depth": 2,
+      "isRoot": false,
+      "keptShare": "24461202606765953",
+      "amount": "244612026067659530",
+      "inflows": [
+        {
+          "from": 4,
+          "share": "24461202606765953"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "bitstream",
+      "payout": "0x115282d6F34E7F707750Adca17B2359680298fD5",
+      "deps": [],
+      "depth": 3,
+      "isRoot": false,
+      "keptShare": "69195094567221519",
+      "amount": "691950945672215190",
+      "inflows": [
+        {
+          "from": 5,
+          "share": "36934874924139279"
+        },
+        {
+          "from": 6,
+          "share": "32260219643082240"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "intl-polyfill",
+      "payout": "0x75C37bDbD3456B28A831584b1290e295d65967A1",
+      "deps": [],
+      "depth": 3,
+      "isRoot": false,
+      "keptShare": "62642854693590322",
+      "amount": "626428546935903220",
+      "inflows": [
+        {
+          "from": 7,
+          "share": "62642854693590322"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "bigint-utils",
+      "payout": "0xd4FE3609e7274476534112b4a52A03F1f613a38e",
+      "deps": [],
+      "depth": 4,
+      "isRoot": false,
+      "keptShare": "13511427737578625",
+      "amount": "135114277375786250",
+      "inflows": [
+        {
+          "from": 9,
+          "share": "13511427737578625"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "url-parse",
+      "payout": "0x23EBCC4625DA1ef59168792446bF02b64c398a6b",
+      "deps": [],
+      "depth": 4,
+      "isRoot": false,
+      "keptShare": "3233602729584323",
+      "amount": "32336027295843230",
+      "inflows": [
+        {
+          "from": 10,
+          "share": "3233602729584323"
+        }
+      ]
+    }
+  ],
+  "parents": [
+    {
+      "parent": 0,
+      "name": "devcon-event-app",
+      "judgmentsUsed": 42,
+      "items": [
+        {
+          "id": 0,
+          "name": "devcon-event-app (its own work)",
+          "weight": "335049700550890959"
+        },
+        {
+          "id": 1,
+          "name": "qr-ticketing (solo developer, Pune)",
+          "weight": "265368552994199372"
+        },
+        {
+          "id": 2,
+          "name": "i18n-hindi",
+          "weight": "117194217510173875"
+        },
+        {
+          "id": 3,
+          "name": "wallet-connect-wrapper",
+          "weight": "127805712827186339"
+        },
+        {
+          "id": 4,
+          "name": "ui-kit",
+          "weight": "154581816117549455"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 0,
+          "b": 1,
+          "aWins": 2,
+          "bWins": 2,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906"
+          ]
+        },
+        {
+          "a": 0,
+          "b": 2,
+          "aWins": 3,
+          "bWins": 1,
+          "ties": 1,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 0,
+          "b": 3,
+          "aWins": 4,
+          "bWins": 1,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 0,
+          "b": 4,
+          "aWins": 3,
+          "bWins": 0,
+          "ties": 1,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 1,
+          "b": 2,
+          "aWins": 1,
+          "bWins": 1,
+          "ties": 0,
+          "jurors": [
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc"
+          ]
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "aWins": 3,
+          "bWins": 1,
+          "ties": 1,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "aWins": 3,
+          "bWins": 1,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "aWins": 1,
+          "bWins": 3,
+          "ties": 1,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "aWins": 1,
+          "bWins": 2,
+          "ties": 1,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "aWins": 1,
+          "bWins": 3,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        }
+      ]
+    },
+    {
+      "parent": 1,
+      "name": "qr-ticketing (solo developer, Pune)",
+      "judgmentsUsed": 14,
+      "items": [
+        {
+          "id": 1,
+          "name": "qr-ticketing (solo developer, Pune) (its own work)",
+          "weight": "372081343190630540"
+        },
+        {
+          "id": 5,
+          "name": "qr-encode",
+          "weight": "222693304130556148"
+        },
+        {
+          "id": 6,
+          "name": "image-decode",
+          "weight": "405225352678813312"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 1,
+          "b": 5,
+          "aWins": 2,
+          "bWins": 2,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 1,
+          "b": 6,
+          "aWins": 3,
+          "bWins": 2,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 5,
+          "b": 6,
+          "aWins": 1,
+          "bWins": 4,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        }
+      ]
+    },
+    {
+      "parent": 2,
+      "name": "i18n-hindi",
+      "judgmentsUsed": 4,
+      "items": [
+        {
+          "id": 2,
+          "name": "i18n-hindi (its own work)",
+          "weight": "800000000000000000"
+        },
+        {
+          "id": 7,
+          "name": "i18n-core",
+          "weight": "200000000000000000"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 2,
+          "b": 7,
+          "aWins": 3,
+          "bWins": 0,
+          "ties": 1,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        }
+      ]
+    },
+    {
+      "parent": 3,
+      "name": "wallet-connect-wrapper",
+      "judgmentsUsed": 12,
+      "items": [
+        {
+          "id": 3,
+          "name": "wallet-connect-wrapper (its own work)",
+          "weight": "424466460926373248"
+        },
+        {
+          "id": 7,
+          "name": "i18n-core",
+          "weight": "125284971533503929"
+        },
+        {
+          "id": 8,
+          "name": "eth-rpc",
+          "weight": "450248567540122823"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 3,
+          "b": 7,
+          "aWins": 2,
+          "bWins": 1,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 3,
+          "b": 8,
+          "aWins": 3,
+          "bWins": 2,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 7,
+          "b": 8,
+          "aWins": 0,
+          "bWins": 4,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        }
+      ]
+    },
+    {
+      "parent": 4,
+      "name": "ui-kit",
+      "judgmentsUsed": 12,
+      "items": [
+        {
+          "id": 4,
+          "name": "ui-kit (its own work)",
+          "weight": "402271384595501297"
+        },
+        {
+          "id": 7,
+          "name": "i18n-core",
+          "weight": "439487476691489965"
+        },
+        {
+          "id": 11,
+          "name": "css-utils",
+          "weight": "158241138713008738"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 4,
+          "b": 7,
+          "aWins": 1,
+          "bWins": 1,
+          "ties": 1,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 4,
+          "b": 11,
+          "aWins": 3,
+          "bWins": 1,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 7,
+          "b": 11,
+          "aWins": 3,
+          "bWins": 0,
+          "ties": 2,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        }
+      ]
+    },
+    {
+      "parent": 5,
+      "name": "qr-encode",
+      "judgmentsUsed": 3,
+      "items": [
+        {
+          "id": 5,
+          "name": "qr-encode (its own work)",
+          "weight": "375000000000000000"
+        },
+        {
+          "id": 12,
+          "name": "bitstream",
+          "weight": "625000000000000000"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 5,
+          "b": 12,
+          "aWins": 1,
+          "bWins": 2,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906"
+          ]
+        }
+      ]
+    },
+    {
+      "parent": 6,
+      "name": "image-decode",
+      "judgmentsUsed": 4,
+      "items": [
+        {
+          "id": 6,
+          "name": "image-decode (its own work)",
+          "weight": "700000000000000000"
+        },
+        {
+          "id": 12,
+          "name": "bitstream",
+          "weight": "300000000000000000"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 6,
+          "b": 12,
+          "aWins": 3,
+          "bWins": 1,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        }
+      ]
+    },
+    {
+      "parent": 7,
+      "name": "i18n-core",
+      "judgmentsUsed": 5,
+      "items": [
+        {
+          "id": 7,
+          "name": "i18n-core (its own work)",
+          "weight": "416666666666666666"
+        },
+        {
+          "id": 13,
+          "name": "intl-polyfill",
+          "weight": "583333333333333334"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 7,
+          "b": 13,
+          "aWins": 1,
+          "bWins": 2,
+          "ties": 2,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        }
+      ]
+    },
+    {
+      "parent": 8,
+      "name": "eth-rpc",
+      "judgmentsUsed": 14,
+      "items": [
+        {
+          "id": 8,
+          "name": "eth-rpc (its own work)",
+          "weight": "488616377413163967"
+        },
+        {
+          "id": 9,
+          "name": "abi-codec",
+          "weight": "370279617625251670"
+        },
+        {
+          "id": 10,
+          "name": "http-client",
+          "weight": "141104004961584363"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 8,
+          "b": 9,
+          "aWins": 3,
+          "bWins": 1,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 8,
+          "b": 10,
+          "aWins": 3,
+          "bWins": 1,
+          "ties": 1,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 9,
+          "b": 10,
+          "aWins": 4,
+          "bWins": 0,
+          "ties": 1,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        }
+      ]
+    },
+    {
+      "parent": 9,
+      "name": "abi-codec",
+      "judgmentsUsed": 12,
+      "items": [
+        {
+          "id": 9,
+          "name": "abi-codec (its own work)",
+          "weight": "245287636641802865"
+        },
+        {
+          "id": 8,
+          "name": "eth-rpc",
+          "weight": "157600937239632427"
+        },
+        {
+          "id": 14,
+          "name": "bigint-utils",
+          "weight": "597111426118564708"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 8,
+          "b": 9,
+          "aWins": 1,
+          "bWins": 3,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906"
+          ]
+        },
+        {
+          "a": 8,
+          "b": 14,
+          "aWins": 1,
+          "bWins": 3,
+          "ties": 0,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        },
+        {
+          "a": 9,
+          "b": 14,
+          "aWins": 0,
+          "bWins": 3,
+          "ties": 1,
+          "jurors": [
+            "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+            "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        }
+      ]
+    },
+    {
+      "parent": 10,
+      "name": "http-client",
+      "judgmentsUsed": 3,
+      "items": [
+        {
+          "id": 10,
+          "name": "http-client (its own work)",
+          "weight": "625000000000000000"
+        },
+        {
+          "id": 15,
+          "name": "url-parse",
+          "weight": "375000000000000000"
+        }
+      ],
+      "comparisons": [
+        {
+          "a": 10,
+          "b": 15,
+          "aWins": 2,
+          "bWins": 1,
+          "ties": 0,
+          "jurors": [
+            "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+            "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+            "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65"
+          ]
+        }
+      ]
+    }
+  ],
+  "allocations": [
+    {
+      "recipient": "0x115282d6F34E7F707750Adca17B2359680298fD5",
+      "amount": "691950945672215190",
+      "packages": [
+        12
+      ]
+    },
+    {
+      "recipient": "0x13c69095364E3a2B8b178A0aDdeBB3e7A924c175",
+      "amount": "298596060809276880",
+      "packages": [
+        8
+      ]
+    },
+    {
+      "recipient": "0x18ea34C60feAEF7d3ABbB3498349DDaCfA7b9F6a",
+      "amount": "937553740081391000",
+      "packages": [
+        2
+      ]
+    },
+    {
+      "recipient": "0x23EBCC4625DA1ef59168792446bF02b64c398a6b",
+      "amount": "32336027295843230",
+      "packages": [
+        15
+      ]
+    },
+    {
+      "recipient": "0x4699582f9a11Ae7e70B4DdFA122D0712De0aAD63",
+      "amount": "3350497005508909590",
+      "packages": [
+        0
+      ]
+    },
+    {
+      "recipient": "0x4a87D5448C1496baBe1A47Dd0D68F56C0C6C9AbE",
+      "amount": "752738458338585600",
+      "packages": [
+        6
+      ]
+    },
+    {
+      "recipient": "0x50FA577985D622eA0EF24d67965FFb0cf4747158",
+      "amount": "447448962097073740",
+      "packages": [
+        7
+      ]
+    },
+    {
+      "recipient": "0x75C37bDbD3456B28A831584b1290e295d65967A1",
+      "amount": "626428546935903220",
+      "packages": [
+        13
+      ]
+    },
+    {
+      "recipient": "0x7B453526f5852dac145C007B73CE3D37f14B4677",
+      "amount": "221609249544835680",
+      "packages": [
+        5
+      ]
+    },
+    {
+      "recipient": "0x7bAd7DB06Eed9AbE477a492c28A44F02A58970e6",
+      "amount": "987386876386357250",
+      "packages": [
+        1
+      ]
+    },
+    {
+      "recipient": "0xB0202FCB732b5F571eDfd26985fE0E9F84b5BC2e",
+      "amount": "244612026067659530",
+      "packages": [
+        11
+      ]
+    },
+    {
+      "recipient": "0xcaaE1528C35c8fd338b71deEc69B70F54CA51312",
+      "amount": "55503646931537610",
+      "packages": [
+        9
+      ]
+    },
+    {
+      "recipient": "0xD4503a7A67748AB35252823ED0Ce825f57bfD432",
+      "amount": "53893378826405530",
+      "packages": [
+        10
+      ]
+    },
+    {
+      "recipient": "0xd4FE3609e7274476534112b4a52A03F1f613a38e",
+      "amount": "135114277375786250",
+      "packages": [
+        14
+      ]
+    },
+    {
+      "recipient": "0xd8652246EF9BE3D6f6D028a8b6EF7558D18BCa3f",
+      "amount": "542492386099281710",
+      "packages": [
+        3
+      ]
+    },
+    {
+      "recipient": "0xfD94B540cB9F54Fa73D16DB9feCAE4a46aB65F62",
+      "amount": "621838412028937990",
+      "packages": [
+        4
+      ]
+    }
+  ],
+  "proofs": {
+    "0x115282d6F34E7F707750Adca17B2359680298fD5": [
+      "0x17d9331503c7e699db37aac695643c79ba85adea914908228c173d1764f4b9a5",
+      "0x90d50ad2656ca4e9688610cfb1b601543a9240a5f4a56ecc6a20f6a7bf4aa203",
+      "0xa4b4ae0ffbd658fb7b52e9225be3fc934f03106ecdaaf93d8549cfbfeb4e8a52",
+      "0x4bc2565751d17a4921c7791f6f185e8459bac660dab6a75180dd9cf357b8b1f7"
+    ],
+    "0x13c69095364E3a2B8b178A0aDdeBB3e7A924c175": [
+      "0x64a96560b339211ffddef47a6b43abd4fd99a3987681b9ce85a0fbef4425b3fd",
+      "0x90d50ad2656ca4e9688610cfb1b601543a9240a5f4a56ecc6a20f6a7bf4aa203",
+      "0xa4b4ae0ffbd658fb7b52e9225be3fc934f03106ecdaaf93d8549cfbfeb4e8a52",
+      "0x4bc2565751d17a4921c7791f6f185e8459bac660dab6a75180dd9cf357b8b1f7"
+    ],
+    "0x18ea34C60feAEF7d3ABbB3498349DDaCfA7b9F6a": [
+      "0xf86481e56ee83a128841e93ea53500536a2ce628f2efee389c5901c36cdd8611",
+      "0x58290de8ace6d5c142eb2c3e1b8bfa4810e629410ef6fa29734bd8b67ef23dff",
+      "0xa4b4ae0ffbd658fb7b52e9225be3fc934f03106ecdaaf93d8549cfbfeb4e8a52",
+      "0x4bc2565751d17a4921c7791f6f185e8459bac660dab6a75180dd9cf357b8b1f7"
+    ],
+    "0x23EBCC4625DA1ef59168792446bF02b64c398a6b": [
+      "0xcee1ed7856f0b97aaa8c310c225f3f3d4590cf45de0201aae2f4298152074de2",
+      "0x58290de8ace6d5c142eb2c3e1b8bfa4810e629410ef6fa29734bd8b67ef23dff",
+      "0xa4b4ae0ffbd658fb7b52e9225be3fc934f03106ecdaaf93d8549cfbfeb4e8a52",
+      "0x4bc2565751d17a4921c7791f6f185e8459bac660dab6a75180dd9cf357b8b1f7"
+    ],
+    "0x4699582f9a11Ae7e70B4DdFA122D0712De0aAD63": [
+      "0x9670e15c0470a43059521304564fc0bb7fb69cba347e64118e77f320a9e405a9",
+      "0xcc6d0174e26e56aa5a844620090025d970d1eb230d85a0c697b9558179526534",
+      "0x4a85eb8945578477ddbcd85a2be6d4174cda5e6ee4697718d05654a40b1babed",
+      "0x4bc2565751d17a4921c7791f6f185e8459bac660dab6a75180dd9cf357b8b1f7"
+    ],
+    "0x4a87D5448C1496baBe1A47Dd0D68F56C0C6C9AbE": [
+      "0xd6923b4b34e926bfeba94aefc6102f45e67d2533d805d0b7e26ad7c3ee209c4f",
+      "0xcc6d0174e26e56aa5a844620090025d970d1eb230d85a0c697b9558179526534",
+      "0x4a85eb8945578477ddbcd85a2be6d4174cda5e6ee4697718d05654a40b1babed",
+      "0x4bc2565751d17a4921c7791f6f185e8459bac660dab6a75180dd9cf357b8b1f7"
+    ],
+    "0x50FA577985D622eA0EF24d67965FFb0cf4747158": [
+      "0x6077485cdb690cd62669f16030790485dd1cb9e9c99d741a3bafaf7c36d64958",
+      "0x8864b53afcf01498c97bd62cea3dbbda738b269504583464b3f6366b68322aca",
+      "0x4a85eb8945578477ddbcd85a2be6d4174cda5e6ee4697718d05654a40b1babed",
+      "0x4bc2565751d17a4921c7791f6f185e8459bac660dab6a75180dd9cf357b8b1f7"
+    ],
+    "0x75C37bDbD3456B28A831584b1290e295d65967A1": [
+      "0xce567e29675588c96df20c3d6055d8178b3238cab805e27c54d3179807d3f95e",
+      "0x8864b53afcf01498c97bd62cea3dbbda738b269504583464b3f6366b68322aca",
+      "0x4a85eb8945578477ddbcd85a2be6d4174cda5e6ee4697718d05654a40b1babed",
+      "0x4bc2565751d17a4921c7791f6f185e8459bac660dab6a75180dd9cf357b8b1f7"
+    ],
+    "0x7B453526f5852dac145C007B73CE3D37f14B4677": [
+      "0x109f9e2d7ba0cb1f0d6159461345c11d5858e82a2559c4425798801923891849",
+      "0x9c9b473ccd2d4c7544724fd4d970b4ad74532db5a7f0a5e68715eb415e899bb2",
+      "0xa2d54d8600a158bad2d5372be6a57e716022e77f36d39c32585ab127e35930df",
+      "0x666d825d2d3e52f918a27eb7360580aa1e671b0cf4af454e9ecd9e7329d09e11"
+    ],
+    "0x7bAd7DB06Eed9AbE477a492c28A44F02A58970e6": [
+      "0x753e09c963e4da4670128f1a89148d0111d626c9d5f926198d0ba2d4c031fea4",
+      "0x9c9b473ccd2d4c7544724fd4d970b4ad74532db5a7f0a5e68715eb415e899bb2",
+      "0xa2d54d8600a158bad2d5372be6a57e716022e77f36d39c32585ab127e35930df",
+      "0x666d825d2d3e52f918a27eb7360580aa1e671b0cf4af454e9ecd9e7329d09e11"
+    ],
+    "0xB0202FCB732b5F571eDfd26985fE0E9F84b5BC2e": [
+      "0x2dff8f2ade780a38413b263db8fffd9d22edac4c87ef12fea69f384c953d92fb",
+      "0x4e4540f8237f3a513419ecb1a953acb530ba536843a1878a0944a4e2cdbd6223",
+      "0xa2d54d8600a158bad2d5372be6a57e716022e77f36d39c32585ab127e35930df",
+      "0x666d825d2d3e52f918a27eb7360580aa1e671b0cf4af454e9ecd9e7329d09e11"
+    ],
+    "0xcaaE1528C35c8fd338b71deEc69B70F54CA51312": [
+      "0x4484406e8f8c6f99dd5e8e079eadc99580c602cf93d339945e79a7bd5c9ce75c",
+      "0x4e4540f8237f3a513419ecb1a953acb530ba536843a1878a0944a4e2cdbd6223",
+      "0xa2d54d8600a158bad2d5372be6a57e716022e77f36d39c32585ab127e35930df",
+      "0x666d825d2d3e52f918a27eb7360580aa1e671b0cf4af454e9ecd9e7329d09e11"
+    ],
+    "0xD4503a7A67748AB35252823ED0Ce825f57bfD432": [
+      "0xc05d5454cc6a290d3390751dfdb52770f0987b1351cb17d9054253f5d2aba73d",
+      "0xe94274d10848339bba41d8332702ac68044f7dcfa9165adab06d310cbec66166",
+      "0x0fe01dbb6226a4196593b3f81b7b170e19d80bce0ab94a9a7722c93b72e3d762",
+      "0x666d825d2d3e52f918a27eb7360580aa1e671b0cf4af454e9ecd9e7329d09e11"
+    ],
+    "0xd4FE3609e7274476534112b4a52A03F1f613a38e": [
+      "0x47f65ba7a0962d6b2503647eec1cc5b7009a34de4c2e1d00986e1df1ef48e570",
+      "0xe94274d10848339bba41d8332702ac68044f7dcfa9165adab06d310cbec66166",
+      "0x0fe01dbb6226a4196593b3f81b7b170e19d80bce0ab94a9a7722c93b72e3d762",
+      "0x666d825d2d3e52f918a27eb7360580aa1e671b0cf4af454e9ecd9e7329d09e11"
+    ],
+    "0xd8652246EF9BE3D6f6D028a8b6EF7558D18BCa3f": [
+      "0x6f770121b34a898039856eea5605df9a3dfc90ae08ceb8e129c1be6a88f4fe36",
+      "0x6774f253745b1657b7d7f87eae5fd0d41b91cbf1149a234bc2495bdb1a4cc596",
+      "0x0fe01dbb6226a4196593b3f81b7b170e19d80bce0ab94a9a7722c93b72e3d762",
+      "0x666d825d2d3e52f918a27eb7360580aa1e671b0cf4af454e9ecd9e7329d09e11"
+    ],
+    "0xfD94B540cB9F54Fa73D16DB9feCAE4a46aB65F62": [
+      "0x8e062c087bb72bb47a4444f2541d65bd70cbfb0af30428e8a1ded7e49a9f235a",
+      "0x6774f253745b1657b7d7f87eae5fd0d41b91cbf1149a234bc2495bdb1a4cc596",
+      "0x0fe01dbb6226a4196593b3f81b7b170e19d80bce0ab94a9a7722c93b72e3d762",
+      "0x666d825d2d3e52f918a27eb7360580aa1e671b0cf4af454e9ecd9e7329d09e11"
+    ]
+  }
+}

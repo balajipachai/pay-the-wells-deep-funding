@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pay the wells</title>
+<style>
+  :root { --bg:#faf7f2; --card:#fff; --ink:#1d1b16; --muted:#6b665c; --line:#e6e0d4; --accent:#1f6f5c; --accent-ink:#fff;
+          --ok:#1f6f5c; --bad:#a32a2a; --warn:#a15c00; --track:#ebe5d8; --soft:#f3efe6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#14130f; --card:#1e1c17; --ink:#f1ede3; --muted:#a29c8d; --line:#34312a;
+          --accent:#4fb89c; --accent-ink:#0c1512; --ok:#4fb89c; --bad:#e57373; --warn:#e0a24a; --track:#2c2a23; --soft:#27251f; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:20px 16px 56px; }
+  h1 { font-size:1.45rem; line-height:1.25; margin:0 0 4px; } h2 { font-size:1.1rem; margin:26px 0 10px; }
+  .sub { color:var(--muted); margin:0 0 14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; margin-bottom:14px; }
+  .banner { border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-bottom:14px; font-weight:600; background:var(--card); }
+  .banner small { display:block; font-weight:400; color:var(--muted); margin-top:3px; }
+  .banner.ok { border-color:var(--ok); } .banner.wait { border-color:var(--warn); } .banner.bad { border-color:var(--bad); }
+  .big { font-size:2rem; font-weight:700; line-height:1.1; margin:6px 0 2px; } .big small { font-size:.95rem; font-weight:400; color:var(--muted); }
+  .bar { height:10px; background:var(--track); border-radius:99px; overflow:hidden; margin:6px 0; } .bar>div { height:100%; background:var(--accent); }
+  .row { display:flex; justify-content:space-between; gap:12px; color:var(--muted); font-size:.92rem; }
+  ol.steps { margin:10px 0 0; padding-left:20px; } ol.steps li { margin-bottom:10px; } ol.steps b { color:var(--ink); }
+  table { width:100%; border-collapse:collapse; font-size:.9rem; margin-top:6px; } th,td { text-align:right; padding:5px 4px; border-bottom:1px solid var(--line); }
+  th:first-child,td:first-child { text-align:left; } th { color:var(--muted); font-weight:500; }
+  .mono { font-family:ui-monospace,Menlo,monospace; font-size:.82rem; word-break:break-all; }
+  pre.cmd { background:var(--soft); border-radius:10px; padding:10px 12px; overflow-x:auto; font-size:.82rem; margin:8px 0; }
+  .check { margin-top:8px; padding:8px 10px; border-radius:8px; background:var(--soft); font-size:.9rem; } .check.good { color:var(--ok); } .check.badc { color:var(--bad); }
+  label { display:block; font-weight:600; margin:10px 0 4px; } select,input,textarea { width:100%; font:inherit; padding:11px; border-radius:10px; border:1px solid var(--line); background:var(--bg); color:var(--ink); }
+  button { font:inherit; font-weight:600; padding:11px 16px; border-radius:10px; border:0; cursor:pointer; background:var(--accent); color:var(--accent-ink); min-height:46px; }
+  button.ghost { background:transparent; color:var(--ink); border:1px solid var(--line); } button.full { width:100%; margin-top:12px; } button:disabled { opacity:.5; cursor:not-allowed; }
+  .msg { margin-top:8px; font-size:.92rem; min-height:1.3em; } .msg.err { color:var(--bad); } .msg.good { color:var(--ok); }
+  details { margin-top:10px; border-top:1px solid var(--line); padding-top:10px; } summary { cursor:pointer; font-weight:600; }
+  a { color:var(--accent); } [hidden] { display:none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="title">Pay the wells</h1>
+  <p class="sub">A thank-you pot flows down the packages the app was built on. A jury decided the weights, and anyone can re-run the numbers and dispute them before a rupee moves.</p>
+
+  <div id="banner" class="banner" hidden></div>
+  <div id="sample" class="banner wait" hidden>You are looking at sample data, not a live round.<small>Run <span class="mono">script/deploy.sh</span> to connect this page to a deployment.</small></div>
+
+  <section class="card">
+    <label for="who">Which package are you?</label>
+    <select id="who"></select>
+    <div class="msg" id="whoHint"></div>
+    <button class="ghost full" id="connect">Connect wallet to find my package</button>
+  </section>
+
+  <div id="mine" hidden></div>
+
+  <section class="card" id="claimCard" hidden></section>
+
+  <section class="card" id="disputeCard" hidden></section>
+
+  <h2>Everyone's share</h2>
+  <section class="card"><table id="all"></table></section>
+  <p class="sub" id="foot"></p>
+</main>
+
+<script src="config.js"></script>
+<script type="module">
+import { createPublicClient, createWalletClient, custom, http, defineChain, parseAbi, formatEther, keccak256, encodeAbiParameters, concatHex, toBytes, getAddress }
+  from "https://esm.sh/viem@2.21.54";
+
+const W = window.WELLS, $ = (id) => document.getElementById(id);
+const SCALE = 10n ** 18n;
+const PHASES = ["Judging", "Awaiting proposal", "Challenge window", "Disputed", "Ready to finalize", "Finalized"];
+const abi = parseAbi([
+  "function phase() view returns (uint8)",
+  "function proposal() view returns (address proposer, bytes32 root, uint256 pot, uint256 proposedAt, uint256 openDisputes)",
+  "function finalized() view returns (bool)", "function judgmentCount() view returns (uint256)",
+  "function disputeWindow() view returns (uint256)", "function disputeBond() view returns (uint256)",
+  "function pot() view returns (uint256)", "function judgmentDeadline() view returns (uint256)",
+  "function claimed(address) view returns (bool)",
+  "function dispute(bytes32) payable returns (uint256)", "function claim(address,uint256,bytes32[])", "function finalize()",
+  "error NoProposal()", "error WindowClosed()", "error WindowOpen()", "error WrongBond()", "error OpenDisputes()", "error AlreadyFinalized()",
+  "error NotFinalized()", "error AlreadyClaimed()", "error InvalidProof()", "error ExceedsPot()", "error TransferFailed()",
+]);
+const PLAIN = {
+  NoProposal: "No result has been proposed yet.", WindowClosed: "The dispute window has closed, so new disputes can't be raised.",
+  WindowOpen: "The dispute window is still open. The result can be locked in once it closes.", WrongBond: "The dispute needs the exact bond amount shown above.",
+  OpenDisputes: "A dispute is still open, so the result can't be locked in until the jury decides it.", AlreadyFinalized: "The result is already final.",
+  NotFinalized: "The result isn't final yet, so nothing can be claimed.", AlreadyClaimed: "This share has already been claimed.",
+  InvalidProof: "This allocation doesn't match the committed result.",
+};
+function explain(e) {
+  const name = e?.walk?.((x) => x?.data?.errorName)?.data?.errorName;
+  if (name && PLAIN[name]) return PLAIN[name];
+  if (/user rejected|denied/i.test(e?.message || "")) return "You cancelled the request in your wallet.";
+  if (/insufficient funds/i.test(e?.message || "")) return "Your wallet doesn't have enough ETH for this plus network fees.";
+  return "Something went wrong. Nothing was sent. Please try again.";
+}
+const eth = (w) => { const n = Number(formatEther(w)); const s = n >= 100 ? n.toFixed(2) : n >= 1 ? n.toFixed(3) : n >= 0.001 ? n.toFixed(4) : n.toFixed(6); return s.replace(/\.?0+$/, "") + " ETH"; };
+const pct = (num, den) => den === 0n ? "0" : (Number((num * 100000n) / den) / 1000).toFixed(1).replace(/\.0$/, "");
+const short = (a) => a.slice(0, 6) + "…" + a.slice(-4);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function left(sec) { if (sec <= 0) return "0m"; const d = Math.floor(sec/86400), h = Math.floor(sec%86400/3600), m = Math.floor(sec%3600/60); return d ? `${d}d ${h}h` : h ? `${h}h ${m}m` : `${Math.max(m,1)}m`; }
+
+$("title").textContent = W.title; document.title = W.title;
+const R = await (await fetch("result.json", { cache: "no-store" })).json();
+let dep = null; try { dep = await (await fetch("deployment.json", { cache: "no-store" })).json(); } catch {}
+const live = !!dep?.address;
+$("sample").hidden = live;
+const pkgs = R.packages, byId = new Map(pkgs.map((p) => [p.id, p]));
+const parentsBy = new Map(R.parents.map((p) => [p.parent, p]));
+const POT = BigInt(R.pot);
+
+let pub = null, wallet = null, account = null, st = null, chainNow = 0;
+if (live) {
+  const chain = defineChain({ id: dep.chainId, name: W.chainName, nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 }, rpcUrls: { default: { http: [W.rpcUrl] } } });
+  pub = createPublicClient({ chain, transport: http(W.rpcUrl) });
+}
+const read = (functionName, args) => pub.readContract({ address: dep.address, abi, functionName, args });
+
+async function loadState() {
+  if (!live) return;
+  try {
+    const [phase, proposal, finalized, count, window, bond, deadline, block] = await Promise.all([
+      read("phase"), read("proposal"), read("finalized"), read("judgmentCount"), read("disputeWindow"), read("disputeBond"), read("judgmentDeadline"), pub.getBlock(),
+    ]);
+    chainNow = Math.max(Number(block.timestamp), Math.floor(Date.now() / 1000));
+    st = { phase: Number(phase), root: proposal[1], proposedAt: Number(proposal[3]), openDisputes: Number(proposal[4]), finalized, count, window: Number(window), bond, deadline: Number(deadline) };
+  } catch (e) { console.error(e); st = null; }
+}
+
+// ---- Merkle check, in the browser: is this allocation part of the root the contract committed to?
+const pair = (a, b) => (a.toLowerCase() < b.toLowerCase() ? keccak256(concatHex([a, b])) : keccak256(concatHex([b, a])));
+function proofOk(recipient, amount, proof, root) {
+  let h = keccak256(keccak256(encodeAbiParameters([{ type: "address" }, { type: "address" }, { type: "uint256" }], [R.contract, recipient, amount])));
+  for (const p of proof) h = pair(h, p);
+  return h.toLowerCase() === root.toLowerCase();
+}
+
+function banner() {
+  const b = $("banner"); b.hidden = false;
+  if (!live) { b.className = "banner wait"; b.innerHTML = `Sample round<small>This is the repository's sample graph and jury, shown exactly as the engine computed it.</small>`; return; }
+  if (!st) { b.className = "banner wait"; b.innerHTML = `Couldn't reach the contract<small>Check your connection; this page retries automatically.</small>`; return; }
+  const msg = [
+    ["wait", "The jury is still judging", `${left(st.deadline - chainNow)} left. ${st.count} judgments recorded so far. No result has been proposed.`],
+    ["wait", "Waiting for a result to be proposed", "Judging is closed. A juror will run the engine on the on-chain judgments and publish the result."],
+    ["", "Dispute window open", `A result is proposed. Anyone can check it and dispute it for the next ${left(st.proposedAt + st.window - chainNow)}. Nobody is paid before then.`],
+    ["bad", "A dispute is open", "The jury is deciding it. The result can't be locked in until they do."],
+    ["ok", "Ready to lock in", "The window closed with no open dispute. Anyone can lock the result in."],
+    ["ok", "Result is final", "Nobody can change it now. Each recipient can claim their share."],
+  ][st.phase];
+  const extra = st.phase === 2 && st.openDisputes > 0 ? ` ${st.openDisputes} dispute${st.openDisputes === 1 ? " is" : "s are"} open: the jury is deciding, and the result can't be locked in until they do.` : "";
+  b.className = "banner " + (extra ? "bad" : msg[0]); b.innerHTML = `${msg[1]}<small>${msg[2]}${extra}</small>`;
+}
+
+function renderMine(id) {
+  const p = byId.get(id); if (!p) return;
+  const amount = BigInt(p.amount), kept = BigInt(p.keptShare);
+  const par = parentsBy.get(id);
+  const keep = par ? BigInt(par.items[0].weight) : SCALE;
+  const inflows = p.inflows.map((f) => ({ ...f, from: byId.get(f.from), share: BigInt(f.share) }));
+  const seed = p.isRoot ? SCALE : 0n;
+  const reached = seed + inflows.reduce((s, f) => s + f.share, 0n);
+
+  const fromHtml = [
+    p.isRoot ? `<li><b>${eth(POT)}</b> (the whole pot) started here, with ${esc(p.name)}.</li>` : "",
+    ...inflows.map((f) => {
+      const pp = parentsBy.get(f.from.id), me = pp.items.find((i) => i.id === id), mine = pp.comparisons.filter((c) => c.a === id || c.b === id);
+      const rows = mine.map((c) => {
+        const other = c.a === id ? c.b : c.a, meWins = c.a === id ? c.aWins : c.bWins, theirWins = c.a === id ? c.bWins : c.aWins;
+        const nm = other === pp.parent ? `${byId.get(other).name} itself` : byId.get(other).name;
+        return `<tr><td>vs ${esc(nm)}</td><td>${meWins}</td><td>${theirWins}</td><td>${c.ties}</td><td>${c.jurors.length} juror${c.jurors.length === 1 ? "" : "s"}</td></tr>`;
+      }).join("");
+      return `<li><b>${esc(f.from.name)}</b> passed down <b>${eth((f.share * POT) / SCALE)}</b> to ${esc(p.name)} (${pct(f.share, SCALE)}% of the pot).
+        Of everything that reaches ${esc(f.from.name)}, the jury's answers send <b>${pct(BigInt(me.weight), SCALE)}%</b> on to ${esc(p.name)}. That comes from ${pp.judgmentsUsed} jury answers about ${esc(f.from.name)}:
+        <table><tr><th>the jury compared you</th><th>you won</th><th>they won</th><th>equal</th><th>from</th></tr>${rows || '<tr><td colspan="5" style="text-align:left">no direct comparisons, so the model gave you an even starting weight</td></tr>'}</table></li>`;
+    }),
+  ].join("");
+
+  const passes = par ? par.items.slice(1).map((i) => `${esc(byId.get(i.id).name)} ${pct(BigInt(i.weight), SCALE)}%`).join(", ") : "";
+  const keepHtml = par
+    ? `<li>${eth((reached * POT) / SCALE)} reached ${esc(p.name)} in total. The jury's answers about ${esc(p.name)}'s own dependencies say it keeps <b>${pct(keep, SCALE)}%</b> and passes the rest on (${passes}).</li>`
+    : `<li>${esc(p.name)} depends on nothing else, so it keeps everything that reaches it.</li>`;
+
+  $("mine").hidden = false;
+  $("mine").innerHTML = `<section class="card">
+    <div class="sub" style="margin:0">${esc(p.name)} · paid to <span class="mono">${short(p.payout)}</span></div>
+    <div class="big">${eth(amount)} <small>${pct(amount, POT)}% of the ${eth(POT)} pot</small></div>
+    <div class="bar"><div style="width:${Math.min(100, Number(pct(amount, POT)))}%"></div></div>
+    <h2 style="margin-top:14px">Why did I get this much?</h2>
+    <ol class="steps">${fromHtml}${keepHtml}<li>So ${esc(p.name)} ends with <b>${eth(amount)}</b>: ${pct(kept, SCALE)}% of the pot. Nobody typed this number in; it comes from the jury's answers, run through the same public method for every package.</li></ol>
+    <details><summary>How the jury's answers become weights</summary>
+      <p class="sub">For each package, jurors answered questions like "which mattered more, A or B?" about it and its dependencies, including the package's own work. A Bradley–Terry model turns those answers into weights, so a win over a strong rival counts for more than a win over a weak one. The package's own weight is how much it keeps; the rest is split among its dependencies. Value that loops back through a dependency cycle keeps shrinking until it settles, and rounding is shared out so the total equals the pot exactly.</p>
+    </details></section>`;
+  claimCard(p, amount);
+}
+
+function claimCard(p, amount) {
+  const c = $("claimCard");
+  if (!live || !st) { c.hidden = true; return; }
+  const al = R.allocations.find((a) => a.recipient.toLowerCase() === p.payout.toLowerCase());
+  if (!al) { c.hidden = true; return; }
+  c.hidden = false;
+  const proof = R.proofs[al.recipient], total = BigInt(al.amount);
+  const published = st.root !== `0x${"0".repeat(64)}` && st.root.toLowerCase() === R.root.toLowerCase();
+  const verified = proofOk(al.recipient, total, proof, R.root);
+  c.innerHTML = `<b>Claim</b>
+    <div class="check ${verified ? "good" : "badc"}">${verified ? "✓" : "✗"} Your ${eth(total)} is a leaf of the Merkle root in the published result, checked in your browser.</div>
+    <div class="check ${published ? "good" : "badc"}">${published ? "✓ That root is the one committed on-chain." : "✗ The published result does not match the root committed on-chain. Do not trust it; dispute."}</div>
+    ${st.finalized ? `<div id="claimArea"><div class="msg">Checking whether this has been claimed…</div></div>`
+      : `<p class="sub" style="margin:10px 0 0">Claiming opens when the result is final.</p>`}`;
+  if (st.finalized) read("claimed", [al.recipient]).then((done) => {
+    const area = $("claimArea"); if (!area) return;
+    area.innerHTML = done ? `<div class="check good">✓ Already claimed: ${eth(total)} was sent to <span class="mono">${short(al.recipient)}</span>.</div>`
+      : `<button class="full" id="claimBtn">Claim ${eth(total)}</button><div class="msg" id="claimMsg"></div>`;
+    if ($("claimBtn")) $("claimBtn").onclick = () => act($("claimMsg"), () => send("claim", [al.recipient, total, proof]));
+  }).catch(() => { const area = $("claimArea"); if (area) area.innerHTML = `<div class="msg err">Couldn't check the claim status. Please reload.</div>`; });
+}
+
+function disputeCard() {
+  const c = $("disputeCard"); c.hidden = false;
+  const cmd = live
+    ? `git clone ${W.repo}\ncd pay-the-wells-deep-funding/engine && npm install\nnode src/cli.ts reproduce --rpc <a Sepolia RPC URL> --contract ${dep.address}`
+    : `git clone ${W.repo}\ncd pay-the-wells-deep-funding/engine && npm install\nnpm run reproduce`;
+  const open = live && st && st.phase === 2;
+  c.innerHTML = `<b>Think a number is wrong? Check it, and dispute it.</b>
+    <ol class="steps">
+      <li><b>Re-run it yourself.</b> One command reads the graph and every judgment from the chain and recomputes the result. It prints <span class="mono">PASS</span> if it gets the same root as the proposal, <span class="mono">FAIL</span> if not.<pre class="cmd">${esc(cmd)}</pre></li>
+      <li><b>If it says FAIL</b>${live ? `, raise a dispute during the window. It takes a ${eth(st?.bond ?? 0n)} bond, returned if the jury agrees with you and forfeited if they don't.` : ", raise a dispute during the window, with a bond that is returned if the jury agrees with you."} The jury decides it by majority, and the juror who proposed the result can't vote on it. While any dispute is open, nothing can be paid.</li>
+    </ol>
+    ${live ? (open ? `<label for="reason">What's wrong?</label><textarea id="reason" rows="2" placeholder="e.g. my recomputed root differs: 0x…"></textarea>
+      <button class="ghost full" id="disputeBtn">Raise a dispute (bond ${eth(st.bond)})</button><div class="msg" id="disputeMsg"></div>`
+      : `<p class="sub" style="margin:0">Disputes can be raised only while the challenge window is open${st ? "" : ""}.</p>`) : ""}`;
+  if ($("disputeBtn")) $("disputeBtn").onclick = () => act($("disputeMsg"), () => {
+    const text = $("reason").value.trim(); if (!text) throw Object.assign(new Error("empty"), { friendly: "Please say what looks wrong; the jury will read it." });
+    return send("dispute", [keccak256(toBytes(text))], st.bond);
+  });
+}
+
+function allTable() {
+  $("all").innerHTML = `<tr><th>package</th><th>level</th><th>share</th><th>amount</th></tr>` + [...pkgs].sort((a, b) => (BigInt(b.amount) > BigInt(a.amount) ? 1 : -1)).map((p) =>
+    `<tr><td>${esc(p.name)}</td><td>${p.depth ?? "-"}</td><td>${pct(BigInt(p.amount), POT)}%</td><td>${eth(BigInt(p.amount))}</td></tr>`).join("");
+  $("foot").innerHTML = `${R.judgmentsCounted} jury answers, ${R.cycles.length} dependency cycle${R.cycles.length === 1 ? "" : "s"} handled. Result root <span class="mono">${short(R.root)}</span>.` +
+    (live ? ` Contract <a class="mono" href="${W.explorer}/address/${dep.address}" target="_blank" rel="noopener">${short(dep.address)}</a>.` : "");
+}
+
+async function send(functionName, args, value) {
+  await pub.simulateContract({ address: dep.address, abi, functionName, args, account, value });
+  return wallet.writeContract({ address: dep.address, abi, functionName, args, account, value });
+}
+async function connect() {
+  try {
+    if (!window.ethereum) throw Object.assign(new Error("no wallet"), { friendly: "Open this page in your wallet's browser (MetaMask, Rainbow, Coinbase Wallet…)." });
+    if (!live) throw Object.assign(new Error("sample"), { friendly: "This is sample data; connect a wallet once a round is deployed." });
+    wallet = createWalletClient({ chain: pub.chain, transport: custom(window.ethereum) });
+    [account] = await wallet.requestAddresses();
+    try { await wallet.switchChain({ id: dep.chainId }); } catch {}
+    const mine = pkgs.find((p) => p.payout.toLowerCase() === account.toLowerCase());
+    if (mine) { $("who").value = String(mine.id); $("whoHint").className = "msg good"; $("whoHint").textContent = `Found ${mine.name} for ${short(account)}.`; renderMine(mine.id); }
+    else { $("whoHint").className = "msg err"; $("whoHint").textContent = `${short(account)} isn't the payout address of any package. Pick yours from the list.`; }
+  } catch (e) { $("whoHint").className = "msg err"; $("whoHint").textContent = e.friendly || explain(e); }
+}
+async function act(el, fn) {
+  const id = el.id, msg = () => document.getElementById(id) || el;
+  msg().className = "msg"; msg().textContent = "Confirm in your wallet…";
+  try {
+    if (!account) await connect(); if (!account) return;
+    const hash = await fn(); msg().textContent = "Sent. Waiting for confirmation…";
+    const receipt = await pub.waitForTransactionReceipt({ hash });
+    if (receipt.status !== "success") throw Object.assign(new Error("reverted"), { friendly: "The transaction failed on the network, so nothing changed. Please try again." });
+    await loadState(); banner(); renderMine(Number($("who").value)); disputeCard(); msg().className = "msg good"; msg().textContent = "Done!";
+  } catch (e) { console.error(e); msg().className = "msg err"; msg().textContent = e.friendly || explain(e); }
+}
+
+$("who").innerHTML = `<option value="">Choose a package…</option>` + [...pkgs].sort((a, b) => a.name.localeCompare(b.name)).map((p) => `<option value="${p.id}">${esc(p.name)}</option>`).join("");
+$("who").onchange = () => { $("whoHint").textContent = ""; $("who").value ? renderMine(Number($("who").value)) : ($("mine").hidden = true, $("claimCard").hidden = true); };
+$("connect").onclick = connect;
+if (window.ethereum?.on) window.ethereum.on("accountsChanged", () => location.reload());
+
+await loadState(); banner(); disputeCard(); allTable();
+const first = new URLSearchParams(location.search).get("package");
+if (first && byId.has(Number(first))) { $("who").value = first; renderMine(Number(first)); }
+setInterval(async () => { await loadState(); banner(); disputeCard(); if ($("who").value) renderMine(Number($("who").value)); }, 20000);
+</script>
+</body>
+</html>
