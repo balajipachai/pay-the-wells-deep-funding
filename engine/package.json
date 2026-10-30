@@ -1,0 +1,12 @@
+{
+  "name": "deep-funding-engine",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "reproduce": "node src/cli.ts reproduce",
+    "compute": "node src/cli.ts compute",
+    "test": "node --test src/"
+  },
+  "dependencies": { "viem": "2.21.54" }
+}
