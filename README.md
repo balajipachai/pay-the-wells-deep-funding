@@ -8,6 +8,9 @@ See [`RUBRIC.md`](RUBRIC.md) for a check-by-check map from the grading rubric to
 
 ## Run it yourself
 
+Requires Node 22.18 or newer (the engine runs TypeScript directly) and Foundry. The sample jurors in `data/config.json`
+are well-known anvil accounts, used only for the local run; a live round needs the real jurors' own transactions.
+
 ```sh
 cd engine && npm install
 npm run reproduce        # recompute the sample result from the published graph and judgments
@@ -106,6 +109,16 @@ the on-chain `graphHash` before it reports success.
 | Network | Address |
 |---------|---------|
 | Sepolia | [`0x0fc594a70734fd953493962daff508bb70c180bf`](https://sepolia.etherscan.io/address/0x0fc594a70734fd953493962daff508bb70c180bf) (block 12027739; pot 0.01 ETH; 3 jurors; judging closes 1793462436; dispute window 24 h) |
+
+## Limits
+
+- **Disputes are decided by the jury.** A dispute is settled by a majority vote of the jurors fixed at deployment, with
+  the proposer excluded. A colluding majority could uphold a wrong result; the chain cannot recompute the weights itself.
+  What the design guarantees is that anyone can rerun the engine against the on-chain judgments, see the mismatch, and
+  dispute it before anyone is paid, and that neither the deployer nor the proposer can resolve a dispute alone.
+- **The jury is fixed at deployment.** There is no owner to change it, so a juror who loses their key cannot be replaced.
+- **Judgments are what counts.** A package no juror compared receives its structural share only from the prior; the
+  engine's half-win prior keeps unrated packages from getting zero.
 
 ## Verification performed
 
