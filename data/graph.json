@@ -1,0 +1,131 @@
+{
+  "root": 0,
+  "packages": [
+    {
+      "id": 0,
+      "name": "devcon-event-app",
+      "payout": "0x4699582f9a11Ae7e70B4DdFA122D0712De0aAD63",
+      "deps": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 1,
+      "name": "qr-ticketing (solo developer, Pune)",
+      "payout": "0x7bAd7DB06Eed9AbE477a492c28A44F02A58970e6",
+      "deps": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": 2,
+      "name": "i18n-hindi",
+      "payout": "0x18ea34C60feAEF7d3ABbB3498349DDaCfA7b9F6a",
+      "deps": [
+        7
+      ]
+    },
+    {
+      "id": 3,
+      "name": "wallet-connect-wrapper",
+      "payout": "0xd8652246EF9BE3D6f6D028a8b6EF7558D18BCa3f",
+      "deps": [
+        8,
+        7
+      ]
+    },
+    {
+      "id": 4,
+      "name": "ui-kit",
+      "payout": "0xfD94B540cB9F54Fa73D16DB9feCAE4a46aB65F62",
+      "deps": [
+        7,
+        11
+      ]
+    },
+    {
+      "id": 5,
+      "name": "qr-encode",
+      "payout": "0x7B453526f5852dac145C007B73CE3D37f14B4677",
+      "deps": [
+        12
+      ]
+    },
+    {
+      "id": 6,
+      "name": "image-decode",
+      "payout": "0x4a87D5448C1496baBe1A47Dd0D68F56C0C6C9AbE",
+      "deps": [
+        12
+      ]
+    },
+    {
+      "id": 7,
+      "name": "i18n-core",
+      "payout": "0x50FA577985D622eA0EF24d67965FFb0cf4747158",
+      "deps": [
+        13
+      ]
+    },
+    {
+      "id": 8,
+      "name": "eth-rpc",
+      "payout": "0x13c69095364E3a2B8b178A0aDdeBB3e7A924c175",
+      "deps": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": 9,
+      "name": "abi-codec",
+      "payout": "0xcaaE1528C35c8fd338b71deEc69B70F54CA51312",
+      "deps": [
+        14,
+        8
+      ]
+    },
+    {
+      "id": 10,
+      "name": "http-client",
+      "payout": "0xD4503a7A67748AB35252823ED0Ce825f57bfD432",
+      "deps": [
+        15
+      ]
+    },
+    {
+      "id": 11,
+      "name": "css-utils",
+      "payout": "0xB0202FCB732b5F571eDfd26985fE0E9F84b5BC2e",
+      "deps": []
+    },
+    {
+      "id": 12,
+      "name": "bitstream",
+      "payout": "0x115282d6F34E7F707750Adca17B2359680298fD5",
+      "deps": []
+    },
+    {
+      "id": 13,
+      "name": "intl-polyfill",
+      "payout": "0x75C37bDbD3456B28A831584b1290e295d65967A1",
+      "deps": []
+    },
+    {
+      "id": 14,
+      "name": "bigint-utils",
+      "payout": "0xd4FE3609e7274476534112b4a52A03F1f613a38e",
+      "deps": []
+    },
+    {
+      "id": 15,
+      "name": "url-parse",
+      "payout": "0x23EBCC4625DA1ef59168792446bF02b64c398a6b",
+      "deps": []
+    }
+  ]
+}

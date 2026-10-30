@@ -1,0 +1,877 @@
+[
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 0,
+    "a": 0,
+    "b": 1,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 0,
+    "a": 2,
+    "b": 0,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 0,
+    "a": 0,
+    "b": 3,
+    "outcome": 0
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 0,
+    "a": 0,
+    "b": 4,
+    "outcome": 2
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 0,
+    "a": 3,
+    "b": 1,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 0,
+    "a": 1,
+    "b": 4,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 0,
+    "a": 2,
+    "b": 3,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 0,
+    "a": 2,
+    "b": 4,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 0,
+    "a": 4,
+    "b": 3,
+    "outcome": 0
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 1,
+    "a": 5,
+    "b": 1,
+    "outcome": 0
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 1,
+    "a": 6,
+    "b": 1,
+    "outcome": 0
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 1,
+    "a": 5,
+    "b": 6,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 2,
+    "a": 7,
+    "b": 2,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 3,
+    "a": 7,
+    "b": 3,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 3,
+    "a": 3,
+    "b": 8,
+    "outcome": 0
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 3,
+    "a": 8,
+    "b": 7,
+    "outcome": 0
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 4,
+    "a": 4,
+    "b": 7,
+    "outcome": 2
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 4,
+    "a": 4,
+    "b": 11,
+    "outcome": 0
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 4,
+    "a": 11,
+    "b": 7,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 5,
+    "a": 12,
+    "b": 5,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 6,
+    "a": 6,
+    "b": 12,
+    "outcome": 0
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 7,
+    "a": 7,
+    "b": 13,
+    "outcome": 2
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 8,
+    "a": 9,
+    "b": 8,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 8,
+    "a": 10,
+    "b": 8,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 8,
+    "a": 10,
+    "b": 9,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 9,
+    "a": 8,
+    "b": 9,
+    "outcome": 1
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 9,
+    "a": 14,
+    "b": 8,
+    "outcome": 0
+  },
+  {
+    "juror": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "parent": 9,
+    "a": 14,
+    "b": 9,
+    "outcome": 2
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 0,
+    "a": 1,
+    "b": 0,
+    "outcome": 0
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 0,
+    "a": 2,
+    "b": 0,
+    "outcome": 1
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 0,
+    "a": 0,
+    "b": 3,
+    "outcome": 1
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 0,
+    "a": 1,
+    "b": 2,
+    "outcome": 0
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 0,
+    "a": 3,
+    "b": 1,
+    "outcome": 1
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 0,
+    "a": 3,
+    "b": 2,
+    "outcome": 2
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 1,
+    "a": 1,
+    "b": 5,
+    "outcome": 1
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 1,
+    "a": 1,
+    "b": 6,
+    "outcome": 0
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 1,
+    "a": 6,
+    "b": 5,
+    "outcome": 0
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 2,
+    "a": 2,
+    "b": 7,
+    "outcome": 0
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 3,
+    "a": 3,
+    "b": 7,
+    "outcome": 0
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 3,
+    "a": 3,
+    "b": 8,
+    "outcome": 0
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 3,
+    "a": 7,
+    "b": 8,
+    "outcome": 1
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 4,
+    "a": 7,
+    "b": 4,
+    "outcome": 0
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 4,
+    "a": 7,
+    "b": 11,
+    "outcome": 2
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 5,
+    "a": 5,
+    "b": 12,
+    "outcome": 1
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 7,
+    "a": 7,
+    "b": 13,
+    "outcome": 1
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 8,
+    "a": 9,
+    "b": 8,
+    "outcome": 1
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 8,
+    "a": 10,
+    "b": 8,
+    "outcome": 0
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 8,
+    "a": 10,
+    "b": 9,
+    "outcome": 1
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 9,
+    "a": 9,
+    "b": 8,
+    "outcome": 0
+  },
+  {
+    "juror": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "parent": 10,
+    "a": 15,
+    "b": 10,
+    "outcome": 1
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 0,
+    "a": 1,
+    "b": 0,
+    "outcome": 1
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 0,
+    "a": 0,
+    "b": 2,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 0,
+    "a": 0,
+    "b": 3,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 0,
+    "a": 0,
+    "b": 4,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 0,
+    "a": 2,
+    "b": 1,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 0,
+    "a": 3,
+    "b": 1,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 0,
+    "a": 1,
+    "b": 4,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 0,
+    "a": 3,
+    "b": 2,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 0,
+    "a": 4,
+    "b": 2,
+    "outcome": 2
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 0,
+    "a": 4,
+    "b": 3,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 1,
+    "a": 5,
+    "b": 1,
+    "outcome": 1
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 1,
+    "a": 6,
+    "b": 1,
+    "outcome": 1
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 1,
+    "a": 5,
+    "b": 6,
+    "outcome": 1
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 3,
+    "a": 8,
+    "b": 3,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 4,
+    "a": 4,
+    "b": 11,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 4,
+    "a": 7,
+    "b": 11,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 6,
+    "a": 6,
+    "b": 12,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 7,
+    "a": 7,
+    "b": 13,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 8,
+    "a": 9,
+    "b": 8,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 8,
+    "a": 8,
+    "b": 10,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 8,
+    "a": 9,
+    "b": 10,
+    "outcome": 2
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 9,
+    "a": 8,
+    "b": 9,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 9,
+    "a": 14,
+    "b": 8,
+    "outcome": 0
+  },
+  {
+    "juror": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "parent": 9,
+    "a": 14,
+    "b": 9,
+    "outcome": 0
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 0,
+    "a": 1,
+    "b": 0,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 0,
+    "a": 0,
+    "b": 2,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 0,
+    "a": 0,
+    "b": 3,
+    "outcome": 0
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 0,
+    "a": 4,
+    "b": 0,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 0,
+    "a": 3,
+    "b": 1,
+    "outcome": 2
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 0,
+    "a": 1,
+    "b": 4,
+    "outcome": 0
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 0,
+    "a": 2,
+    "b": 3,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 0,
+    "a": 2,
+    "b": 4,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 0,
+    "a": 3,
+    "b": 4,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 1,
+    "a": 1,
+    "b": 6,
+    "outcome": 0
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 1,
+    "a": 6,
+    "b": 5,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 2,
+    "a": 7,
+    "b": 2,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 3,
+    "a": 3,
+    "b": 8,
+    "outcome": 0
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 3,
+    "a": 7,
+    "b": 8,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 4,
+    "a": 4,
+    "b": 11,
+    "outcome": 0
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 4,
+    "a": 7,
+    "b": 11,
+    "outcome": 2
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 5,
+    "a": 12,
+    "b": 5,
+    "outcome": 0
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 6,
+    "a": 12,
+    "b": 6,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 7,
+    "a": 13,
+    "b": 7,
+    "outcome": 2
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 8,
+    "a": 8,
+    "b": 10,
+    "outcome": 2
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 8,
+    "a": 10,
+    "b": 9,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 9,
+    "a": 9,
+    "b": 8,
+    "outcome": 0
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 9,
+    "a": 8,
+    "b": 14,
+    "outcome": 0
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 9,
+    "a": 9,
+    "b": 14,
+    "outcome": 1
+  },
+  {
+    "juror": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "parent": 10,
+    "a": 10,
+    "b": 15,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 0,
+    "a": 0,
+    "b": 2,
+    "outcome": 2
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 0,
+    "a": 0,
+    "b": 3,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 0,
+    "a": 0,
+    "b": 4,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 0,
+    "a": 1,
+    "b": 3,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 0,
+    "a": 1,
+    "b": 4,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 0,
+    "a": 3,
+    "b": 2,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 0,
+    "a": 4,
+    "b": 2,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 0,
+    "a": 3,
+    "b": 4,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 1,
+    "a": 1,
+    "b": 5,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 1,
+    "a": 1,
+    "b": 6,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 1,
+    "a": 6,
+    "b": 5,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 2,
+    "a": 7,
+    "b": 2,
+    "outcome": 2
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 3,
+    "a": 7,
+    "b": 3,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 3,
+    "a": 8,
+    "b": 3,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 3,
+    "a": 7,
+    "b": 8,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 4,
+    "a": 4,
+    "b": 7,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 4,
+    "a": 4,
+    "b": 11,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 4,
+    "a": 11,
+    "b": 7,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 6,
+    "a": 12,
+    "b": 6,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 7,
+    "a": 7,
+    "b": 13,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 8,
+    "a": 9,
+    "b": 8,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 8,
+    "a": 10,
+    "b": 8,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 8,
+    "a": 9,
+    "b": 10,
+    "outcome": 0
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 9,
+    "a": 8,
+    "b": 14,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 9,
+    "a": 9,
+    "b": 14,
+    "outcome": 1
+  },
+  {
+    "juror": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "parent": 10,
+    "a": 15,
+    "b": 10,
+    "outcome": 0
+  }
+]
