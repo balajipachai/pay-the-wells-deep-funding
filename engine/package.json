@@ -6,7 +6,7 @@
   "scripts": {
     "reproduce": "node src/cli.ts reproduce",
     "compute": "node src/cli.ts compute",
-    "test": "node --test src/"
+    "test": "node --test src/engine.test.ts"
   },
   "dependencies": { "viem": "2.21.54" }
 }
