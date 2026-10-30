@@ -105,7 +105,7 @@ the on-chain `graphHash` before it reports success.
 
 | Network | Address |
 |---------|---------|
-| Sepolia | _pending deployment_ |
+| Sepolia | [`0x0fc594a70734fd953493962daff508bb70c180bf`](https://sepolia.etherscan.io/address/0x0fc594a70734fd953493962daff508bb70c180bf) (block 12027739; pot 0.01 ETH; 3 jurors; judging closes 1793462436; dispute window 24 h) |
 
 ## Verification performed
 
