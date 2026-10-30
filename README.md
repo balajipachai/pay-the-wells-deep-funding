@@ -11,7 +11,7 @@ See [`RUBRIC.md`](RUBRIC.md) for a check-by-check map from the grading rubric to
 ```sh
 cd engine && npm install
 npm run reproduce        # recompute the sample result from the published graph and judgments
-npm test                 # 24 engine tests
+npm test                 # 23 engine tests
 cd .. && forge test      # 40 contract tests
 script/e2e-anvil.sh      # the entire lifecycle on a local chain, with assertions
 ```
@@ -112,7 +112,7 @@ the on-chain `graphHash` before it reports success.
 | Layer | Result |
 |-------|--------|
 | `forge test` | 40 tests pass, including the engine's real output run through the contract (Solidity and TypeScript digests agree; every allocation claimed with the engine's proofs) |
-| `npm test` (engine) | 24 tests: sample pinned byte for byte, conservation, cycles, multi-level payout, jury-derived keep-shares, order independence, BT analytic check |
+| `npm test` (engine) | 23 tests: sample pinned byte for byte, conservation, cycles, multi-level payout, jury-derived keep-shares, order independence, BT analytic check |
 | Slither | 0 findings; accepted notes are suppressed inline with a reason |
 | `script/e2e-anvil.sh` | Full lifecycle on a local chain: 125 judgments on-chain, result recomputed from chain data alone is byte-identical to `data/result.json`, a dispute rejected by the jury, finalize, 16 recipients paid exactly once, nothing left in the contract |
 | Browser | The page was driven through sample mode, the dispute window (raising a dispute through the page) and the finalized/claimed state |
